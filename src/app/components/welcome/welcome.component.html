@@ -1,0 +1,13 @@
+<div class="fullpage">
+  <h1 class="headline">
+    Welcome to Trees and Tents!
+    <br>
+    Choose your game!
+  </h1>
+  <div class="container">
+    <label for="sizeInput">Choose a size: </label>
+    <input id="sizeInput" type="number" [(ngModel)]="size"/>
+    <button class="btn btn-primary btn-margin" (click)="generateGame(size)">Create Game</button>
+  </div>
+</div>
+

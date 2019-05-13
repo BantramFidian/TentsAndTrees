@@ -1,0 +1,12 @@
+<button class="btn btn-primary btn-margin" routerLink="/">Back to the Start.</button>
+<div class="canvas">
+  <div *ngFor="let row of rows; let rowIndex = index" class="row align-content-center col-8 offset-2">
+    <div *ngFor="let column of rows; let colIndex = index">
+      <app-game-cell *ngIf="rowIndex > 0 && colIndex > 0; else countBlock"
+                     [trueState]="viewGame.gameCells[rowIndex - 1][colIndex - 1].cellType"></app-game-cell>
+      <ng-template #countBlock >
+        <div class="game-cell-empty">{{numberOfTentsInRowOrCol(rowIndex, colIndex)}}</div>
+      </ng-template>
+    </div>
+  </div>
+</div>
